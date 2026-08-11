@@ -1,0 +1,1 @@
+document.getElementById("viti").textContent = new Date().getFullYear()
