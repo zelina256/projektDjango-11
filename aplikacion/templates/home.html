@@ -1,63 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    <!-- CSS bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Icon -->
-     <link rel="stylesheet" href="css/all.min.css">
-        <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <!-- nis navbar -->
-    <nav class="navbar navbar-expand-lg navColor">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white fs-1" href="home.html">Code</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Category
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cat 1</a></li>
-                            <li><a class="dropdown-item" href="#">Cat 2</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <!-- fund navbar-->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home page {% endblock %}
+{% block content %}
     <!-- banner -->
     <section class="container my-5">
         <div class="row">
@@ -69,7 +13,7 @@
                 <a href="about.html" class="btn buttonColor">About</a>
             </div>
             <div class="col-12 col-md-6 hapsireCol">
-                <img src="images/banner.jpg" alt="Banner img" class="img-fluid">
+                <img src="{% static 'images/banner.jpg' %}" alt="Banner img" class="img-fluid">
             </div>
         </div>
     </section>
@@ -125,49 +69,5 @@
         </div>
     </section>
     <!-- fund infos -->
-    <!-- nis footer -->
-    <footer class="container-fluid navColor text-white">
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <a href="home.html" class="text-white display-3">Code</a>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                </p>
-            </div>
-            <div class="col-12  col-lg-4">
-                <h3>Link navbar</h3>
-                <ul class="list-unstyled">
-                    <li><a href="home.html" class="text-white">Home</a></li>
-                    <li><a href="about.html" class="text-white">About</a></li>
-                    <li><a href="contact.html" class="text-white">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-12 col-lg-4">
-                <h3>Contact</h3>
-                <ul class="list-unstyled">
-                    <li><a href="tel:0000000" class="text-white"><i class="fa-solid fa-phone"></i> 000000</a></li>
-                    <li><a href="emailto:email@gmail.com" class="text-white"><i class="fa-regular fa-envelope"></i> 
-                        email@gmail.com </a></li>
-                    <li><a href="" class="text-white"><i class="fa-solid fa-location-dot"></i> Street: jnfjsdf</a></li>
-                </ul>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p>&copy; <span id="viti"></span> Copyright</p>
-            </div>
-            <div class="col-12 col-lg-6">
-                <a href="termat.html" class="text-white">Termat</a>
-                <a href="politikat.html" class="text-white">Politikat</a>
-            </div>
-        </div>
-    </footer>
-    <!-- fund footer -->
-    <!-- JS bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
 
-    <!-- JS -->
-    <script src="js/base.js"></script>
-</body>
-
-</html>
+{% endblock %}
