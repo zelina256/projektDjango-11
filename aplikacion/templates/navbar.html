@@ -24,8 +24,9 @@
                             Category
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Cat 1</a></li>
-                            <li><a class="dropdown-item" href="#">Cat 2</a></li>
+                             {% for cat in categories %}
+                            <li><a class="dropdown-item" href="{% url 'categoryPage' cat.category_slug %}">{{ cat.category_name }}</a></li>
+                            {% endfor %}
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

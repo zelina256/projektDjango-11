@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}  page {% endblock %}
+{% block content %}
+<main class="container">
+    <h1>{{detail_cat.category_name}}</h1>
+    <p>{{detail_cat.category_description}}</p>
+    <div class="row">
+        {% for item in category_items %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.item_name  }}</h5>
+                    <p class="card-text">{{ item.item_description }}</p>
+                    <a href="" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+</main>
+
+{% endblock %}
