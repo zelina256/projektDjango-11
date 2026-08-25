@@ -1,12 +1,40 @@
 from django.shortcuts import render
-from .models import Contact
+from .models import *
 from django.contrib import messages
 # Create your views here.
 def home(request):
-    return render(request, "home.html")
+    # Variable = Modeli.objects.metoda
+    # .all() - merr te gjitha te dhenat nga modeli => for in tek html
+    categories = Category.objects.all()
+    context = {"categories":categories}
+    return render(request, "home.html", context)
 
 def about(request):
-    return render(request, "about.html")
+    categories = Category.objects.all()
+    context = {"categories": categories}
+    return render(request, "about.html", context)
+
+
+def category(request, slug):
+    categories = Category.objects.all()
+    # Marrim vetem te dhenen per nje categori/informacion
+    # Variable = Modeli.objects.metoda
+    # .get() - merr vetem nje te dhene nga modeli
+    # brenda () duhet te vendoset "kusht"
+    detail_cat = Category.objects.get(category_slug=slug)
+    # Marrim te gjitha elementet qe i perkasin nje kategorie
+    # Variable = Modeli.objects.metoda
+    # .filter() - merr te gjitha te dhenat nga modeli duke vendosur nje kusht
+    # .filter => for in
+    category_items = Item.objects.filter( item_category =detail_cat)
+    context = {"categories": categories, "detail_cat": detail_cat, "category_items": category_items}
+    return render(request, "category.html", context)
+
+
+
+
+
+
 
 def contact(request):
     # ti tregojme qe metoda eshte post (do marre informacion nga fusha e inputeve)
